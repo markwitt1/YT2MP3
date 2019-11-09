@@ -1,0 +1,36 @@
+﻿<Window x:Class="AlbumSplitter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlbumSplitter"
+        mc:Ignorable="d"
+        Title="Youtube Album Splitter" Height="350" Width="600">
+
+
+
+    <StackPanel Height="Auto"  VerticalAlignment="Stretch">
+
+        <TextBox Margin="0,30,0,10" x:Name="urlTextBox" HorizontalAlignment="Center" Text="https://www.youtube.com/watch?v=sNPnbI1arSE" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown" />
+
+
+        <Button Margin="0,0,0,30" Content="Button" HorizontalAlignment="Center" Click="DownloadBtnClick"/>
+
+
+
+
+        <ProgressBar Margin="0,30,0,30" x:Name="dlProgress"  Height="10" Width="350" Maximum="1"/>
+        <TextBlock x:Name="messageTxt" HorizontalAlignment="Center"></TextBlock>
+
+        <TextBox  Margin="0,30,0,10" x:Name="directoryText" HorizontalAlignment="Center" Text="C:\Youtube Albums" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="directoryPicker_TextChanged"/>
+        <Button x:Name="directoryBtn" Content="Browse" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SelectDir"/>
+
+    </StackPanel>
+
+    
+
+
+
+
+    
+</Window>
