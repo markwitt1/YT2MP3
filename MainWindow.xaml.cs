@@ -17,7 +17,7 @@ using YoutubeExplode.Models.MediaStreams;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.IO;
 
-namespace AlbumSplitter
+namespace YT2MP3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -40,18 +40,18 @@ namespace AlbumSplitter
         }
         private void DownloadBtnClick(object sender, RoutedEventArgs e)
         {
-            
+
             String dir = directoryText.Text;
-            DownloadVid(currentUrl,dir);
+            DownloadVid(currentUrl, dir);
         }
 
-        async void DownloadVid(String url,String dir)
+        async void DownloadVid(String url, String dir)
 
-            
+
         {
             Action<double> a = new Action<double>(updateProgressBar);
             Progress<double> p = new Progress<double>(a);
-                            
+
             try
             {
 
@@ -59,7 +59,7 @@ namespace AlbumSplitter
                 var streamInfo = streamInfoSet.Audio.WithHighestBitrate();
 
                 // Get file extension based on stream's container
-                var ext = "mp3";
+                var ext = "wav";
 
 
                 // Download stream to file
@@ -79,23 +79,24 @@ namespace AlbumSplitter
                 {
                     messageTxt.Text = "error parsing link";
                 }
-         
+
             }
-                
-            }
-            
-            
+
+        }
 
 
-      
+
+
+
 
         private void SelectDir(object sender, RoutedEventArgs e)
         {
-            if (CommonOpenFileDialog.IsPlatformSupported) {
+            if (CommonOpenFileDialog.IsPlatformSupported)
+            {
                 CommonOpenFileDialog dialog = new CommonOpenFileDialog();
                 dialog.Title = "Choose Directory";
                 dialog.IsFolderPicker = true;
-                dialog.EnsurePathExists=true;
+                dialog.EnsurePathExists = true;
                 dialog.Multiselect = false;
 
                 if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
@@ -119,12 +120,21 @@ namespace AlbumSplitter
 
         private async void LoadData()
         {
-            currentId = YoutubeClient.ParseVideoId(currentUrl);
-            currentUrl = urlTextBox.Text;
-            var video = await client.GetVideoAsync(currentId);
-            messageTxt.Text = video.Title;
+            try
+            {
+                currentId = YoutubeClient.ParseVideoId(currentUrl);
+                currentUrl = urlTextBox.Text;
+                var video = await client.GetVideoAsync(currentId);
+                messageTxt.Text = video.Title;
+            }
+            catch (System.FormatException)
+            {
+                messageTxt.Text = "Couldn't parse URL";
+            }
+          
+  
         }
-        
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -134,23 +144,24 @@ namespace AlbumSplitter
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             if (e.Key == Key.Enter)
             {
                 LoadData();
             }
         }
 
-        
+
 
         private void directoryPicker_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-       
-
-        
-
+        private void Album_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window albumWindow = new AlbumWindow(currentUrl);
+            albumWindow.Show();
+        }
     }
 }

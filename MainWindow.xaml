@@ -1,9 +1,9 @@
-﻿<Window x:Class="AlbumSplitter.MainWindow"
+﻿<Window x:Class="YT2MP3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AlbumSplitter"
+        xmlns:local="clr-namespace:YT2MP3"
         mc:Ignorable="d"
         Title="Youtube Album Splitter" Height="350" Width="600">
 
@@ -14,8 +14,8 @@
         <TextBox Margin="0,30,0,10" x:Name="urlTextBox" HorizontalAlignment="Center" Text="https://www.youtube.com/watch?v=sNPnbI1arSE" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" KeyDown="TextBox_KeyDown" />
 
 
-        <Button Margin="0,0,0,30" Content="Button" HorizontalAlignment="Center" Click="DownloadBtnClick"/>
-
+        <Button Margin="0,0,0,30" Content="Download" HorizontalAlignment="Center" Click="DownloadBtnClick"/>
+        <Button Margin="0,0,0,30" Content="Album Mode" HorizontalAlignment="Center" Click="Album_Button_Click"/>
 
 
 
@@ -27,10 +27,10 @@
 
     </StackPanel>
 
-    
 
 
 
 
-    
+
+
 </Window>

@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Users\\Mark\\Documents\\Coding Projekte\\Visual Studio\\YT2MP3\\YT2MP3.csproj": {}
+  },
+  "projects": {
+    "D:\\Users\\Mark\\Documents\\Coding Projekte\\Visual Studio\\YT2MP3\\YT2MP3.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\Mark\\Documents\\Coding Projekte\\Visual Studio\\YT2MP3\\YT2MP3.csproj",
+        "projectName": "YT2MP3",
+        "projectPath": "D:\\Users\\Mark\\Documents\\Coding Projekte\\Visual Studio\\YT2MP3\\YT2MP3.csproj",
+        "packagesPath": "C:\\Users\\Mark\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Mark\\Documents\\Coding Projekte\\Visual Studio\\YT2MP3\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "NAudio": {
+              "target": "Package",
+              "version": "[1.9.0, )"
+            },
+            "NAudio.Lame": {
+              "target": "Package",
+              "version": "[1.1.0-pre3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "WindowsAPICodePack-Core": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            },
+            "WindowsAPICodePack-Shell": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "YoutubeExplode": {
+              "target": "Package",
+              "version": "[4.7.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
